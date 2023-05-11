@@ -1,0 +1,38 @@
+<h2>My Characters</h2>
+
+<div>
+    <label for="new-character">Character name: </label>
+    <input id="new-character" #characterName />
+    <label for="new-character-type">Character type: </label>
+    <input id="new-character-type" #characterType />
+
+    <!--(click) passes input value to add() and then clears the input-->
+    <button type="button" class="add-button" (click)="add(characterName.value); characterName.value=''">Add character</button>
+</div>
+
+<div class="character-container">
+    <div>
+        <h3>Heroes</h3>
+        <ul class="characters-heroes">
+            <li *ngFor="let hero of heroes">
+                <a routerLink="/detail/{{hero.id}}">
+                    <span class="badge">{{hero.id}}</span> {{hero.name}}
+                </a>
+                <button type="button" class="delete" title="delete hero"
+                (click)="delete(hero)">X</button>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h3>Villians</h3>
+        <ul class="characters-villians">
+            <li *ngFor="let villian of villians">
+                <a routerLink="/detail/{{villian.id}}">
+                    <span class="badge">{{villian.id}}</span> {{villian.name}}
+                </a>
+                <button type="button" class="delete" title="delete villian"
+                (click)="delete(villian)">X</button>
+            </li>
+        </ul>
+    </div>
+</div>
