@@ -1,36 +1,85 @@
 <div class="fight">
-    <p>FIGHT CLUB</p>
+  <h2>FIGHT CLUB</h2>
 </div>
 
 <div class="character-container">
-    <div>
-        <h3>Heroes</h3>
-        <ul class="characters-list">            
-            <div class="character" *ngFor="let hero of heroes">
-                <div>
-                    <input type="checkbox" id="hero" name="hero">
-                    <label for="hero">{{hero.name}}</label>
-                </div>
-                <div class="strength">
-                    <span class="strength-label">Strength</span>
-                    <span>{{hero.strength}}</span>
-                </div>
-            </div>
-        </ul>
+  <!-- HEROES -->
+  <div>
+    <h3>Heroes</h3>
+    <ul class="characters">
+      <li
+        class="character"
+        (click)="selectCharacter(hero)"
+        *ngFor="let hero of heroes"
+      >
+        <a>
+          <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+        </a>
+        <div class="strength">
+          <span class="strength-label">Strength</span>
+          <span>{{ hero.strength }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- FIGHTCLUB -->
+  <div class="fight-club">
+    <div *ngIf="!selectedHero && !selectedVillian && draw === false">
+      <h3>Select a Hero and a Villian</h3>
     </div>
-    <div>
-        <h3>Villians</h3>
-        <ul class="characters-list">
-            <div class="character" *ngFor="let villian of villians">
-                <div>
-                    <input type="checkbox" id="villian" name="villian">
-                    <label for="villian">{{villian.name}}</label>
-                </div>
-                <div class="strength">
-                    <span class="strength-label">Strength</span>
-                    <span>{{villian.strength}}</span>
-                </div>
-            </div>
-        </ul>
+    <!-- <div *ngif="winner === undefined"> -->
+    <div *ngIf="selectedHero && winner === undefined">
+      <h2>{{ selectedHero.name }}</h2>
     </div>
+    <div
+      class="versus"
+      *ngIf="selectedHero && selectedVillian && winner === undefined"
+    >
+      <p>versus</p>
+    </div>
+    <div *ngIf="selectedVillian && winner === undefined">
+      <h2>{{ selectedVillian.name }}</h2>
+    </div>
+    <button
+      class="fight-button"
+      *ngIf="selectedHero && selectedVillian && winner === undefined"
+      (click)="fight()"
+    >
+      FIGHT!!!
+    </button>
+    <!-- </div> -->
+  </div>
+  <div class="result" *ngIf="draw">
+    <span>It's a</span>
+    <span>draw!</span>
+    <button (click)="reset()">
+      <img src="../../assets/svg/close-circle-outline.svg" />
+    </button>
+  </div>
+  <div class="result" *ngIf="winner">
+    <h3>{{ winner!.name }} is the winner!</h3>
+    <button (click)="reset()">
+      <img src="../../assets/svg/close-circle-outline.svg" />
+    </button>
+  </div>
+  <!-- VILLIANS -->
+  <div>
+    <h3>Villians</h3>
+    <ul class="characters">
+      <li
+        class="character"
+        (click)="selectCharacter(villian)"
+        *ngFor="let villian of villians"
+      >
+        <a>
+          <span class="badge">{{ villian.id }}</span> {{ villian.name }}
+        </a>
+        <div class="strength">
+          <span class="strength-label">Strength</span>
+          <span>{{ villian.strength }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -17,15 +17,15 @@
 }
 
 .characters li:hover {
-  left: .1em;
+  left: 0.1em;
 }
 
 .characters a {
   color: #333;
   text-decoration: none;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
+  background-color: #eee;
+  margin: 0.5em;
+  padding: 0.3em 0;
   height: 1.6em;
   border-radius: 4px;
   display: block;
@@ -49,13 +49,10 @@
   padding: 0.8em 0.7em 0 0.7em;
   background-color: #405061;
   line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
   height: 1.8em;
   min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
+  text-align: center;
+  margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
 }
 
@@ -64,7 +61,7 @@ button.delete {
   left: 210px;
   top: 5px;
   background-color: white;
-  color:  #525252;
+  color: #525252;
   font-size: 1.1rem;
   margin: 0;
   padding: 1px 10px 3px 10px;
@@ -73,4 +70,13 @@ button.delete {
 button.delete:hover {
   background-color: #525252;
   color: white;
+}
+
+input,
+select {
+  display: block;
+  width: 50%;
+  padding: 0.35rem;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
 }

@@ -1,27 +1,71 @@
-.fight p {
-  color: #369;
-  font-family: 'Staatliches', cursive;
-  font-size: 400%;
-  font-weight: 600;
+.fight h1 {
+  margin: 1rem 0 0 0;
+}
+
+h3 {
   text-align: center;
-  margin: 0;
 }
 
 .character-container {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+}
+
+.characters {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.characters li {
+  position: relative;
+  cursor: pointer;
+}
+
+.characters li:hover {
+  left: 0.1em;
+}
+
+.character {
+  color: #333;
+  text-decoration: none;
+  background-color: #eee;
+  margin: 0.5em;
+  padding: 0.3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.characters li:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+}
+
+.characters li:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.characters .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  text-align: center;
+  height: 1.8em;
+  min-width: 16px;
+  margin-right: 0.8em;
+  border-radius: 4px 0 0 4px;
+}
 
 .character {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 10rem;
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: .5rem .75rem;
-  margin: .5rem 0;
-  background: linear-gradient(to right, #405061 0%,#405061 25%, transparent 25%);
 }
 
 label {
@@ -36,8 +80,59 @@ ul {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 0.8em 0.7em;
 }
 
 .strength-label {
   font-size: xx-small;
+}
+
+.fight-club {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fight-button {
+  color: #369;
+  font-size: 400%;
+  padding: 1rem 3rem;
+  border: 5px solid black;
+  border-radius: 15px;
+}
+
+.fight-button:hover {
+  color: orangered;
+  background-color: yellow;
+}
+
+.versus {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+}
+
+.result button {
+  margin-top: 2rem;
+  padding: 0.5rem;
+}
+
+.result button:hover {
+  background-color: rgb(197, 194, 194);
+}
+
+.result img {
+  height: 30px;
+  width: 30px;
 }
