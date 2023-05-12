@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Character } from '../models/character';
-import { CharacterService } from '../character.service';
-import { MessageService } from '../message.service';
+import { CharacterService } from '../services/character.service';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-characters',
@@ -15,12 +15,9 @@ export class CharactersComponent {
 
   constructor(private characterService: CharacterService, private messageService: MessageService) { }
   
-  type: string = 'hero';
-  
   ngOnInit(): void {
     this.getCharacters();
   }
-
 
   getCharacters(): void {
     this.characterService.getCharacters()
@@ -30,20 +27,19 @@ export class CharactersComponent {
     });
   }
 
-  
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; };
-    this.characterService.addCharacter({ name } as Character)
-    .subscribe(character => {
-      if (character.type === 'hero') {
-        this.heroes.push(character);        
-      } else {
-        this.villians.push(character);
-      }
-    });
-  };
+  // add(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; };
+  //   this.characterService.addCharacter({ name } as Character)
+  //   .subscribe(character => {
+  //     if (character.type === 'hero') {
+  //       this.heroes.push(character);        
+  //     } else {
+  //       this.villians.push(character);
+  //     }
+  //   });
+  // };
 
   delete(character: Character): void {
     this.heroes = this.heroes.filter(char => char !== character);

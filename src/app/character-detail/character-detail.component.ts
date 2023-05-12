@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Character } from '../models/character';
-import { CharacterService } from '../character.service';
+import { CharacterService } from '../services/character.service';
 
 @Component({
   selector: 'app-character-detail',

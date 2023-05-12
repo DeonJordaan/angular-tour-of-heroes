@@ -1,0 +1,28 @@
+<!-- <h2>Add Character</h2> -->
+<form (ngSubmit)="add(name.value, type.value)" #characterForm="ngForm">
+    <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" #name required>
+    <!-- <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">
+        Name is required
+    </div> -->
+    </div>
+    <!-- TODO: remove this: {{model.name}} -->
+    <div>
+        <label for="type">Character type: </label>
+        <select id="type" #type required>
+        <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+        <!-- <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+            Power is required
+        </div> -->
+    </div>
+    <button type="submit" class="add-button" [disabled]="!characterForm.form.valid">Add Character</button>
+</form>
+
+
+<!-- [(ngModel)]="model.name" name="name"
+#name="ngModel"
+[(ngModel)]="model.power" name="power"
+#power="ngModel" -->

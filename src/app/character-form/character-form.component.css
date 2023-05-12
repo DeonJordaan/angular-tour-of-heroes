@@ -1,0 +1,27 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  input,
+  select {
+    display: block;
+    width: 50%;
+    padding: .35rem;
+    margin: .5rem 0;
+    box-sizing: border-box;
+  }
+
+  .add-button {
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+   }
+
+   .add-button:hover {
+    color: white;
+    background-color: #42545C;
+  }

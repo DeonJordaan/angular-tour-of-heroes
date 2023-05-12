@@ -5,7 +5,7 @@ import { catchError, map, tap, filter } from 'rxjs';
 
 import { MessageService } from './message.service';
 
-import { Character } from './models/character';
+import { Character } from '../models/character';
 // import { CHARACTERS } from './mock-characters';
 
 @Injectable({
@@ -43,6 +43,7 @@ export class CharacterService {
   updateCharacter(character: Character): Observable<any> {
     return this.http.put(this.charactersUrl, character, this.httpOptions).pipe(
       tap(_ => this.log(`updated character id=${character.id}`)),
+      tap(_ => console.log(character)),
       catchError(this.handleError<any>('updateCharacter'))
     );
   };

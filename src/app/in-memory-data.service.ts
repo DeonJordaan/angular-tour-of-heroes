@@ -26,7 +26,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 26, name: 'No Comments', strength: 10, type: 'villian' },
       { id: 27, name: 'WetWetWet', strength: 10, type: 'villian' },
       { id: 28, name: 'NoCode', strength: 10, type: 'villian' },
-      { id: 29, name: 'PhpIsJustAScriptingLanguage', strength: 7, type: 'villian' },
+      { id: 29, name: 'PHP', strength: 7, type: 'villian' },
       { id: 30, name: 'VIM', strength: 10, type: 'villian' },
     ];
     return {characters};

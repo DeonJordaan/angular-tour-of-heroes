@@ -1,0 +1,36 @@
+<div class="fight">
+    <p>FIGHT CLUB</p>
+</div>
+
+<div class="character-container">
+    <div>
+        <h3>Heroes</h3>
+        <ul class="characters-list">            
+            <div class="character" *ngFor="let hero of heroes">
+                <div>
+                    <input type="checkbox" id="hero" name="hero">
+                    <label for="hero">{{hero.name}}</label>
+                </div>
+                <div class="strength">
+                    <span class="strength-label">Strength</span>
+                    <span>{{hero.strength}}</span>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div>
+        <h3>Villians</h3>
+        <ul class="characters-list">
+            <div class="character" *ngFor="let villian of villians">
+                <div>
+                    <input type="checkbox" id="villian" name="villian">
+                    <label for="villian">{{villian.name}}</label>
+                </div>
+                <div class="strength">
+                    <span class="strength-label">Strength</span>
+                    <span>{{villian.strength}}</span>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>

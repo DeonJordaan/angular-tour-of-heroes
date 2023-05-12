@@ -7,7 +7,7 @@ import {
  } from 'rxjs/operators';
 
 import { Character } from '../models/character';
-import { CharacterService } from '../character.service';
+import { CharacterService } from '../services/character.service';
 
 @Component({
   selector: 'app-character-search',

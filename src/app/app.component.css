@@ -1,12 +1,13 @@
 /* Application-wide Styles */
 h1 {
     color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Staatliches', cursive;
+    font-size: 400%;
   }
   h2, h3 {
     color: #444;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
     font-weight: lighter;
   }
   body {
@@ -14,7 +15,7 @@ h1 {
   }
   body, input[type="text"], button {
     color: #333;
-    font-family: Cambria, Georgia, serif;
+    font-family: inherit;
   }
   button {
     background-color: #eee;
@@ -40,13 +41,19 @@ h1 {
   
   /* everywhere else */
   * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
   }
 
   /* AppComponent's private CSS styles */
 h1 {
   margin-bottom: 0;
 }
+
+header {
+  text-align: center;
+  margin: 0 auto;
+}
+
 nav a {
   padding: 1rem;
   text-decoration: none;

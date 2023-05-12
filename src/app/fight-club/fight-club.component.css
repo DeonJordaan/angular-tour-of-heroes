@@ -1,0 +1,43 @@
+.fight p {
+  color: #369;
+  font-family: 'Staatliches', cursive;
+  font-size: 400%;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+.character-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.character {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 10rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: .5rem .75rem;
+  margin: .5rem 0;
+  background: linear-gradient(to right, #405061 0%,#405061 25%, transparent 25%);
+}
+
+label {
+  margin-left: 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+.strength {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.strength-label {
+  font-size: xx-small;
+}

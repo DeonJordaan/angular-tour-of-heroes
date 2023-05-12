@@ -13,6 +13,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CharacterSearchComponent } from './character-search/character-search.component';
+import { FightClubComponent } from './fight-club/fight-club.component';
+import { CharacterFormComponent } from './character-form/character-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { CharacterSearchComponent } from './character-search/character-search.co
     MessagesComponent,
     DashboardComponent,
     CharacterSearchComponent,
+    FightClubComponent,
+    CharacterFormComponent,
   ],
 
   imports: [
