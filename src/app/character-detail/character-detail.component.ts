@@ -8,27 +8,37 @@ import { CharacterService } from '../services/character.service';
 @Component({
   selector: 'app-character-detail',
   templateUrl: './character-detail.component.html',
-  styleUrls: ['./character-detail.component.css']
+  styleUrls: ['./character-detail.component.css'],
 })
-
 export class CharacterDetailComponent {
-
   @Input() character?: Character;
 
-  constructor (
+  @Input() nemeses: Character[] = [];
+
+  constructor(
     private route: ActivatedRoute,
     private characterService: CharacterService,
-    private location: Location,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     this.getCharacter();
+    this.getNemeses();
   }
 
   getCharacter(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.characterService.getCharacter(id)
-      .subscribe(character => this.character = character)
+    this.characterService
+      .getCharacter(id)
+      .subscribe((character) => (this.character = character));
+  }
+
+  getNemeses(): void {
+    this.characterService.getCharacters().subscribe((characters) => {
+      this.nemeses = characters.filter(
+        (character) => character.type === 'villian'
+      );
+    });
   }
 
   goBack(): void {
@@ -37,8 +47,9 @@ export class CharacterDetailComponent {
 
   save(): void {
     if (this.character) {
-      this.characterService.updateCharacter(this.character)
-      .subscribe(() => this.goBack());
+      this.characterService
+        .updateCharacter(this.character)
+        .subscribe(() => this.goBack());
     }
   }
 }

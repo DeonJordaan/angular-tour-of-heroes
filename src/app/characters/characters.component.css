@@ -56,20 +56,24 @@
   border-radius: 4px 0 0 4px;
 }
 
+.characters img {
+  height: 15px;
+  width: 15px;
+}
+
 button.delete {
   position: absolute;
   left: 210px;
   top: 5px;
   background-color: white;
-  color: #525252;
   font-size: 1.1rem;
   margin: 0;
-  padding: 1px 10px 3px 10px;
+  padding: 5px;
+  line-height: 0;
 }
 
 button.delete:hover {
-  background-color: #525252;
-  color: white;
+  background-color: rgb(224, 63, 63);
 }
 
 input,

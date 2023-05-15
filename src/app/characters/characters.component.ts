@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddCharacter, Character } from '../models/character';
+import { Character } from '../models/character';
 import { CharacterService } from '../services/character.service';
 import { MessageService } from '../services/message.service';
 
@@ -14,10 +14,7 @@ export class CharactersComponent {
 
   characterTypes = ['hero', 'villian'];
 
-  constructor(
-    private characterService: CharacterService,
-    private messageService: MessageService
-  ) {}
+  constructor(private characterService: CharacterService) {}
 
   ngOnInit(): void {
     this.getCharacters();
@@ -35,13 +32,11 @@ export class CharactersComponent {
   }
 
   add(name: string, type: string): void {
-    const model: AddCharacter = {
+    const model: Partial<Character> = {
       name: name.trim(),
       type: type.trim(),
-      strength: 10,
+      strength: 3,
     };
-
-    console.log(model);
 
     if (!name) {
       return;
@@ -60,6 +55,6 @@ export class CharactersComponent {
   delete(character: Character): void {
     this.heroes = this.heroes.filter((char) => char !== character);
     this.villians = this.villians.filter((char) => char !== character);
-    this.characterService.deleteCharacter(character.id);
+    this.characterService.deleteCharacter(character.id).subscribe();
   }
 }

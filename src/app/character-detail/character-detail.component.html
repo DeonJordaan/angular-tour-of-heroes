@@ -1,13 +1,25 @@
 <div *ngIf="character">
-    <h2>{{character.name | uppercase}} Details</h2>
-    <div><span>Id: </span>{{character.id}}</div>
-    <div>
-        <label for="character-name">Character name : </label>
-        <input id="character-name" [(ngModel)]="character.name" placeholder="name">        
-    </div>
-    <div>Strength: {{character.strength}}</div>
-    <div>Type: {{character.type | uppercase}}</div>
-    <div>Nemesis: {{character.nemesis || 'none'}}</div>
-    <button type="button" (click)="goBack()">Go Back</button>
-    <button type="button" (click)="save()">Save</button>
+  <h2>{{ character.name | uppercase }} Details</h2>
+  <p><span>Id: </span>{{ character.id }}</p>
+  <div>
+    <label for="character-name">Character name : </label>
+    <input
+      id="character-name"
+      [(ngModel)]="character.name"
+      placeholder="name"
+    />
+  </div>
+  <p>Strength: {{ character.strength }}</p>
+  <p>Type: {{ character.type | uppercase }}</p>
+  <div>
+    <label for="nemesis">Nemesis : </label>
+    <select id="nemesis" [(ngModel)]="character.nemesis">
+      <option selected>None</option>
+      <option *ngFor="let nemesis of nemeses" [value]="nemesis.name">
+        {{ nemesis.name }}
+      </option>
+    </select>
+  </div>
+  <button type="button" (click)="goBack()">Go Back</button>
+  <button type="button" (click)="save()">Save</button>
 </div>
