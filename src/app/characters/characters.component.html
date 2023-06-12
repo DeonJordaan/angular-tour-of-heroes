@@ -30,9 +30,10 @@
   <div>
     <h3>Heroes</h3>
     <ul class="characters">
-      <li *ngFor="let hero of heroes">
+      <li class="character" *ngFor="let hero of heroes">
         <a routerLink="/detail/{{ hero.id }}">
           <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+          <span class="nemesis" *ngIf="hero.nemesis">Nemesis: {{ hero.nemesis }}</span>
         </a>
         <button
           type="button"

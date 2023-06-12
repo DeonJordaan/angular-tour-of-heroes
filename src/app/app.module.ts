@@ -14,7 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CharacterSearchComponent } from './character-search/character-search.component';
 import { FightClubComponent } from './fight-club/fight-club.component';
-import { CharacterFormComponent } from './character-form/character-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { CharacterFormComponent } from './character-form/character-form.componen
     DashboardComponent,
     CharacterSearchComponent,
     FightClubComponent,
-    CharacterFormComponent,
   ],
 
   imports: [
