@@ -1,4 +1,4 @@
-/* HeroesComponent's private CSS styles */
+/* CharactersComponent's private CSS styles */
 .character-container {
   display: flex;
   justify-content: space-between;
@@ -89,4 +89,18 @@ select {
   padding: 0.35rem;
   margin: 0.5rem 0;
   box-sizing: border-box;
+}
+
+.add-button {
+  color: #333;
+  background-color: #eee;
+  margin-bottom: 12px;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #42545C;
 }

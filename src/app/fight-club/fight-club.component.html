@@ -26,24 +26,24 @@
 
   <!-- FIGHTCLUB -->
   <div class="fight-club">
-    <div *ngIf="!selectedHero && !selectedvillain && draw === false">
-      <h3>Select a Hero and a villain</h3>
+    <div *ngIf="!selectedHero && !selectedVillain && draw === false">
+      <h3>Select a Hero and a Villain</h3>
     </div>
     <div *ngIf="selectedHero && winner === undefined">
       <h2>{{ selectedHero.name }}</h2>
     </div>
     <div
       class="versus"
-      *ngIf="selectedHero && selectedvillain && winner === undefined"
+      *ngIf="selectedHero && selectedVillain && winner === undefined"
     >
       <p>versus</p>
     </div>
-    <div *ngIf="selectedvillain && winner === undefined">
-      <h2>{{ selectedvillain.name }}</h2>
+    <div *ngIf="selectedVillain && winner === undefined">
+      <h2>{{ selectedVillain.name }}</h2>
     </div>
     <button
       class="fight-button"
-      *ngIf="selectedHero && selectedvillain && winner === undefined"
+      *ngIf="selectedHero && selectedVillain && winner === undefined"
       (click)="fight()"
     >
       FIGHT!!!

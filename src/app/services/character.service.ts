@@ -22,7 +22,7 @@ export class CharacterService {
 
   getCharacters(): Observable<Character[]> {
     return this.http.get<Character[]>(this.charactersUrl).pipe(
-      tap((_) => this.log('fetched character')),
+      tap((_) => this.log('fetched characters')),
       map((characters) =>
         characters.sort((a, b) => (a.strength > b.strength ? -1 : 1))
       ),

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Character } from '../models/character';
 import { CharacterService } from '../services/character.service';
-import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-characters',
@@ -31,10 +30,11 @@ export class CharactersComponent {
     });
   }
 
-  add(name: string, type: string): void {
+  add(name: string, type: string, superpower: string): void {
     const model: Partial<Character> = {
       name: name.trim(),
       type: type.trim(),
+      superpower: superpower.trim(),
       strength: 3,
     };
 

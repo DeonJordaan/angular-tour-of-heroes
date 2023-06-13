@@ -12,20 +12,16 @@
     </option>
   </select>
 
-  <!-- (click) passes input value to add() and then clears the input -->
   <button
     type="button"
     class="add-button"
     (click)="
-      add(characterName.value, characterType.value); characterName.value = ''
+      add(characterName.value, characterType.value, characterPower.value); characterName.value = ''; characterPower.value = ''
     "
   >
     Add character
   </button>
 </div>
-
-<!-- <app-character-form></app-character-form> -->
-
 <div class="character-container">
   <div>
     <h3>Heroes</h3>
