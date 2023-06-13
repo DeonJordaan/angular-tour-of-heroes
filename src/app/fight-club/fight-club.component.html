@@ -14,7 +14,7 @@
       >
         <a>
           <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-          <span class="nemesis" *ngIf="hero.nemesis">Nemesis: {{ hero.nemesis }}</span>
+          <!-- <span class="nemesis" *ngIf="hero.nemesis">Nemesis: {{ hero.nemesis }}</span> -->
         </a>
         <div class="strength">
           <span class="strength-label">Strength</span>
@@ -26,24 +26,24 @@
 
   <!-- FIGHTCLUB -->
   <div class="fight-club">
-    <div *ngIf="!selectedHero && !selectedVillian && draw === false">
-      <h3>Select a Hero and a Villian</h3>
+    <div *ngIf="!selectedHero && !selectedvillain && draw === false">
+      <h3>Select a Hero and a villain</h3>
     </div>
     <div *ngIf="selectedHero && winner === undefined">
       <h2>{{ selectedHero.name }}</h2>
     </div>
     <div
       class="versus"
-      *ngIf="selectedHero && selectedVillian && winner === undefined"
+      *ngIf="selectedHero && selectedvillain && winner === undefined"
     >
       <p>versus</p>
     </div>
-    <div *ngIf="selectedVillian && winner === undefined">
-      <h2>{{ selectedVillian.name }}</h2>
+    <div *ngIf="selectedvillain && winner === undefined">
+      <h2>{{ selectedvillain.name }}</h2>
     </div>
     <button
       class="fight-button"
-      *ngIf="selectedHero && selectedVillian && winner === undefined"
+      *ngIf="selectedHero && selectedvillain && winner === undefined"
       (click)="fight()"
     >
       FIGHT!!!
@@ -62,21 +62,21 @@
       <img src="../../assets/svg/close-circle-outline.svg" />
     </button>
   </div>
-  <!-- VILLIANS -->
+  <!-- VILLAINS -->
   <div>
-    <h3>Villians</h3>
+    <h3>villains</h3>
     <ul class="characters">
       <li
         class="character"
-        (click)="selectCharacter(villian)"
-        *ngFor="let villian of villians"
+        (click)="selectCharacter(villain)"
+        *ngFor="let villain of villains"
       >
         <a>
-          <span class="badge">{{ villian.id }}</span> {{ villian.name }}
+          <span class="badge">{{ villain.id }}</span> {{ villain.name }}
         </a>
         <div class="strength">
           <span class="strength-label">Strength</span>
-          <span>{{ villian.strength }}</span>
+          <span>{{ villain.strength }}</span>
         </div>
       </li>
     </ul>

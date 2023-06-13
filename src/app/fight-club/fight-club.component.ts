@@ -10,16 +10,16 @@ import { MessageService } from '../services/message.service';
 })
 export class FightClubComponent {
   heroes: Character[] = [];
-  villians: Character[] = [];
+  villains: Character[] = [];
   selectedHero: Character | undefined;
-  selectedVillian: Character | undefined;
+  selectedvillain: Character | undefined;
   draw = false;
   winner: Character | undefined;
   loser: Character | undefined;
 
   reset() {
     this.selectedHero = undefined;
-    this.selectedVillian = undefined;
+    this.selectedvillain = undefined;
     this.draw = false;
     this.winner = undefined;
   }
@@ -37,7 +37,7 @@ export class FightClubComponent {
     if (character.type === 'hero') {
       this.selectedHero = character;
     } else {
-      this.selectedVillian = character;
+      this.selectedvillain = character;
     }
   }
 
@@ -49,37 +49,37 @@ export class FightClubComponent {
 
   fight() {
     const heroPower = this.choosePower();
-    const villianPower = this.choosePower();
+    const villainPower = this.choosePower();
 
-    if (heroPower === villianPower) {
+    if (heroPower === villainPower) {
       this.draw = true;
       this.selectedHero = undefined;
-      this.selectedVillian = undefined;
-    } else if (heroPower === 3 || villianPower === 3) {
+      this.selectedvillain = undefined;
+    } else if (heroPower === 3 || villainPower === 3) {
       if (heroPower === 3) {
         this.selectedHero!.strength++;
-        this.selectedVillian!.strength--;
+        this.selectedvillain!.strength--;
         this.winner = this.selectedHero;
-        this.loser = this.selectedVillian;
+        this.loser = this.selectedvillain;
         this.save();
-      } else if (villianPower === 3) {
-        this.selectedVillian!.strength++;
+      } else if (villainPower === 3) {
+        this.selectedvillain!.strength++;
         this.selectedHero!.strength--;
-        this.winner = this.selectedVillian;
+        this.winner = this.selectedvillain;
         this.loser = this.selectedHero;
         this.save();
       }
-    } else if ((heroPower + 1) % 3 == villianPower) {
-      this.selectedVillian!.strength++;
+    } else if ((heroPower + 1) % 3 == villainPower) {
+      this.selectedvillain!.strength++;
       this.selectedHero!.strength--;
-      this.winner = this.selectedVillian;
+      this.winner = this.selectedvillain;
       this.loser = this.selectedHero;
       this.save();
     } else {
       this.selectedHero!.strength++;
-      this.selectedVillian!.strength--;
+      this.selectedvillain!.strength--;
       this.winner = this.selectedHero;
-      this.loser = this.selectedVillian;
+      this.loser = this.selectedvillain;
       this.save();
     }
 
@@ -95,15 +95,15 @@ export class FightClubComponent {
       (this.heroes = characters.filter(
         (character) => character.type === 'hero'
       )),
-        (this.villians = characters.filter(
-          (character) => character.type === 'villian'
+        (this.villains = characters.filter(
+          (character) => character.type === 'villain'
         ));
     });
   }
 
   delete(character: Character): void {
     this.heroes = this.heroes.filter((char) => char !== character);
-    this.villians = this.villians.filter((char) => char !== character);
+    this.villains = this.villains.filter((char) => char !== character);
     this.characterService.deleteCharacter(character.id).subscribe();
   }
 
@@ -114,8 +114,8 @@ export class FightClubComponent {
     if (this.selectedHero && this.selectedHero.strength > 0) {
       this.characterService.updateCharacter(this.selectedHero).subscribe();
     }
-    if (this.selectedVillian && this.selectedVillian.strength > 0) {
-      this.characterService.updateCharacter(this.selectedVillian).subscribe();
+    if (this.selectedvillain && this.selectedvillain.strength > 0) {
+      this.characterService.updateCharacter(this.selectedvillain).subscribe();
     }
   }
 }

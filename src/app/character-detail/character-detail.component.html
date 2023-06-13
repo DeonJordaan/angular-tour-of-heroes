@@ -11,7 +11,8 @@
   </div>
   <p>Strength: {{ character.strength }}</p>
   <p>Type: {{ character.type | uppercase }}</p>
-  <div>
+  <p>Superpower: {{ character.superpower | uppercase }}</p>
+  <div *ngIf="character.type == 'hero'">
     <label for="nemesis">Nemesis : </label>
     <select id="nemesis" [(ngModel)]="character.nemesis">
       <option selected>None</option>

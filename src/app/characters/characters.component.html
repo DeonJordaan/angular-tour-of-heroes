@@ -3,9 +3,9 @@
 <div>
   <label for="new-character">Character name: </label>
   <input id="new-character" #characterName />
-  <!-- <label for="new-character-type">Character type: </label> -->
-  <!-- <input id="new-character-type" #characterType /> -->
-  <label for="characterType">Character type: </label>
+  <label for="character-power">Superpower: </label>
+  <input id="character-power" #characterPower />
+  <label for="characterType">Type: </label>
   <select id="characterType" #characterType required>
     <option *ngFor="let type of characterTypes" [value]="type">
       {{ type }}
@@ -32,8 +32,10 @@
     <ul class="characters">
       <li class="character" *ngFor="let hero of heroes">
         <a routerLink="/detail/{{ hero.id }}">
-          <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-          <span class="nemesis" *ngIf="hero.nemesis">Nemesis: {{ hero.nemesis }}</span>
+          <div class="character-text">
+            <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+            <span class="nemesis" *ngIf="hero.nemesis">VS: {{ hero.nemesis }}</span>
+          </div>
         </a>
         <button
           type="button"
@@ -47,17 +49,17 @@
     </ul>
   </div>
   <div>
-    <h3>Villians</h3>
+    <h3>villains</h3>
     <ul class="characters">
-      <li *ngFor="let villian of villians">
-        <a routerLink="/detail/{{ villian.id }}">
-          <span class="badge">{{ villian.id }}</span> {{ villian.name }}
+      <li *ngFor="let villain of villains">
+        <a routerLink="/detail/{{ villain.id }}">
+          <span class="badge">{{ villain.id }}</span> {{ villain.name }}
         </a>
         <button
           type="button"
           class="delete"
-          title="delete villian"
-          (click)="delete(villian)"
+          title="delete villain"
+          (click)="delete(villain)"
         >
           <img src="../../assets/svg/close-circle-outline.svg" />
         </button>

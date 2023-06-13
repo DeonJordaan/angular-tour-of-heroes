@@ -51,7 +51,7 @@ export class CharacterService {
       .post<Character>(this.charactersUrl, character, this.httpOptions)
       .pipe(
         tap((newCharacter: Character) =>
-          this.log(`added character w/ id=${character.id}`)
+          this.log(`added character w/ id=${character.id}`),
         ),
         catchError(this.handleError<Character>('addCharacter'))
       );

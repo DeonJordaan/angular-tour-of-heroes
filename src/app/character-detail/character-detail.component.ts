@@ -36,7 +36,7 @@ export class CharacterDetailComponent {
   getNemeses(): void {
     this.characterService.getCharacters().subscribe((characters) => {
       this.nemeses = characters.filter(
-        (character) => character.type === 'villian'
+        (character) => character.type === 'villain'
       );
     });
   }

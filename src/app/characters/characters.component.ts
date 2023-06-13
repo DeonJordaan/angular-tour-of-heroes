@@ -10,9 +10,9 @@ import { MessageService } from '../services/message.service';
 })
 export class CharactersComponent {
   heroes: Character[] = [];
-  villians: Character[] = [];
+  villains: Character[] = [];
 
-  characterTypes = ['hero', 'villian'];
+  characterTypes = ['hero', 'villain'];
 
   constructor(private characterService: CharacterService) {}
 
@@ -25,8 +25,8 @@ export class CharactersComponent {
       (this.heroes = characters.filter(
         (character) => character.type === 'hero'
       )),
-        (this.villians = characters.filter(
-          (character) => character.type === 'villian'
+        (this.villains = characters.filter(
+          (character) => character.type === 'villain'
         ));
     });
   }
@@ -47,14 +47,14 @@ export class CharactersComponent {
         if (character.type === 'hero') {
           this.heroes.push(character);
         } else {
-          this.villians.push(character);
+          this.villains.push(character);
         }
       });
   }
 
   delete(character: Character): void {
     this.heroes = this.heroes.filter((char) => char !== character);
-    this.villians = this.villians.filter((char) => char !== character);
+    this.villains = this.villains.filter((char) => char !== character);
     this.characterService.deleteCharacter(character.id).subscribe();
   }
 }
