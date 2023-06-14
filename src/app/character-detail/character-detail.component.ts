@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
+
 import { Location } from '@angular/common';
 
 import { Character } from '../models/character';

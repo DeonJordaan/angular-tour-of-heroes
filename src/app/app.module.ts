@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService} from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
-import { FormsModule } from '@angular/forms';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { CharacterSearchComponent } from './character-search/character-search.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { FightClubComponent } from './fight-club/fight-club.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [

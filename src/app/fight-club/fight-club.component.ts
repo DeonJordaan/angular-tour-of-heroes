@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Character } from '../models/character';
 import { CharacterService } from '../services/character.service';
 
@@ -100,7 +101,7 @@ export class FightClubComponent {
   }
 
   save(): void {
-    if (this.loser && this.loser!.strength <= 0) {
+    if (this.loser && this.loser.strength <= 0) {
       this.delete(this.loser);
     }
     if (this.selectedHero && this.selectedHero.strength > 0) {
