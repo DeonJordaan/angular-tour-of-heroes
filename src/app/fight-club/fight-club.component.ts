@@ -68,7 +68,7 @@ export class FightClubComponent {
         this.loser = this.selectedHero;
         this.save();
       }
-    } else if ((heroPower + 1) % 3 == villainPower) {
+    } else if ((heroPower + 1) % 3 === villainPower) {
       this.selectedVillain!.strength++;
       this.selectedHero!.strength--;
       this.winner = this.selectedVillain;
